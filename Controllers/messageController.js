@@ -18,7 +18,7 @@ const getMessages = async (req, res) => {
     const { chatId } = req.params;
 
     try {
-        const message = await messageModel.find(chatId);
+        const message = await messageModel.find({ chatId });
         res.status(200).json(message);
     } catch(error) {
         console.log(error);
